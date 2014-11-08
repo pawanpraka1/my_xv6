@@ -100,6 +100,12 @@ sys_close(void)
   return 0;
 }
 
+int sys_ps(void)
+{
+  procdump();
+  return 0;
+}
+
 int
 sys_fstat(void)
 {
