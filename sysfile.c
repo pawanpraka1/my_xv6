@@ -106,6 +106,18 @@ int sys_ps(void)
   return 0;
 }
 
+int sys_ofile(void)
+{
+  int fd; 
+
+  for(fd = 0; fd < NOFILE; fd++) {
+    if(proc->ofile[fd])
+      cprintf("%d ", fd);
+  }
+  cprintf("\n");
+	return 0;
+}
+
 int
 sys_fstat(void)
 {
